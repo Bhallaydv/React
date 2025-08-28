@@ -5,11 +5,49 @@ import State1 from "./Class 3/State1";
 import Form from "./Class 4/Form";
 import Wrapper from "./Class 4/Wrapper";
 import Form1 from "./Class 5/Form1";
-
+import Routing from "./Class 6/Routing";
+import Courses from "./Class 6/Courses";
+import Contactus from "./Class 6/Contactus";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import UIUX from "./Class 6/UIUX";
+import Frontend from "./Class 6/Frontend";
+import Backend from "./Class 6/Backend";
 function App() {
 const style={
   backgroundColor:"red"
 }
+
+let router=createBrowserRouter(
+  [
+    {
+      path:'/',
+      element:<Routing />
+    },
+    {
+      path:'/Courses',
+      element:<Courses />,
+      children:[
+        {
+          path:'UIUX',
+          element:<UIUX />
+        },
+      {
+        path:'Frontend',
+        element:<Frontend />
+      },
+    {
+      path:'Backend',
+      element:<Backend />
+    }      ]
+    },
+    {
+      path:'/Contactus',
+      element:<Contactus />
+    }
+
+  ]
+)
+
 
 
 
@@ -52,7 +90,9 @@ const style={
 
 {/* <Form /> */}
 
-<Form1 />
+{/* <Form1 /> */}
+
+<RouterProvider router={router}/>
 
     </>
   )

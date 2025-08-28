@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-async function Form1() {
+ function Form1() {
     // function simple(){}
-    await new Promise((resolve) => { setTimeout(resolve, 2000) });
+     new Promise((resolve) => { setTimeout(resolve, 2000) });
 
     const [formData, setformData] = useState({
         'username': '',
