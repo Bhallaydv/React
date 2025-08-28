@@ -10,8 +10,14 @@ import Courses from "./Class 6/Courses";
 import Contactus from "./Class 6/Contactus";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import UIUX from "./Class 6/UIUX";
-import Frontend from "./Class 6/Frontend";
-import Backend from "./Class 6/Backend";
+import Frontend from "./Class 6/frontend";
+import Backend from "./Class 6/backend";
+import Dashboard from "./Class 6/Dashboard";
+import NotFound from "./Class 7/NotFound";
+import Navbar from "./Class 7/Navbar";
+import Student from "./Class 7/Student";
+
+
 function App() {
 const style={
   backgroundColor:"red"
@@ -21,28 +27,42 @@ let router=createBrowserRouter(
   [
     {
       path:'/',
-      element:<Routing />
+      element:  <> <Navbar />  <Routing /> </>
     },
     {
       path:'/Courses',
-      element:<Courses />,
+      element:<> <Navbar />  <Courses /> </>,
       children:[
         {
           path:'UIUX',
           element:<UIUX />
         },
       {
-        path:'Frontend',
+        path:'frontend',
         element:<Frontend />
       },
     {
-      path:'Backend',
+      path:'backend',
       element:<Backend />
     }      ]
     },
+{
+  path:'Dashboard',
+  element:<> <Navbar />  <Dashboard /> </>
+},
+
     {
       path:'/Contactus',
-      element:<Contactus />
+      element:<> <Navbar />  <Contactus /> </>
+    },
+
+    {
+      path:'*',
+      element:<NotFound />
+    },
+    {
+      path:'/student/:id',
+      element:<> <Navbar />  <Student /> </>
     }
 
   ]
@@ -93,6 +113,8 @@ let router=createBrowserRouter(
 {/* <Form1 /> */}
 
 <RouterProvider router={router}/>
+
+{/* <Navbar /> */}
 
     </>
   )
