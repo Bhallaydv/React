@@ -23,6 +23,7 @@ import MainComponent from "./Class 8/MainComponent";
 import { createContext } from "react";
 import ThemeProvider from "./Class 8/context/ThemeProvider";
 import Hooks1 from "./Class 9/Hooks1";
+import Doubts from "./Class 10/Doubts";
 
 //creation of context
  export const DataContext=createContext()
@@ -138,7 +139,8 @@ let router=createBrowserRouter(
 </DataContext.Provider> */}
 
 {/* <ThemeProvider /> */}
-<Hooks1 />
+{/* <Hooks1 /> */}
+<Doubts />
 
 
     </>
