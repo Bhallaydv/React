@@ -3,6 +3,7 @@ import { DataContext } from '../App'
 
 const Post = () => {
     let data=useContext(DataContext)
+    console.log(data);
   return (
     <div>
         

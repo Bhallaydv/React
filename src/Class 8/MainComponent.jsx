@@ -1,9 +1,9 @@
 import React from 'react'
 import Post from './Post'
-const MainComponent = ({data}) => {
+const MainComponent = () => {
   return (
     <div>
-      <Post name={data} />
+      <Post />
     </div>
   )
 }

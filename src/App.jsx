@@ -21,8 +21,10 @@ import DashBoard from "./Class 8/DashBoard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainComponent from "./Class 8/MainComponent";
 import { createContext } from "react";
+import ThemeProvider from "./Class 8/context/ThemeProvider";
+import Hooks1 from "./Class 9/Hooks1";
 
-
+//creation of context
  export const DataContext=createContext()
 
 
@@ -129,9 +131,14 @@ let router=createBrowserRouter(
 {/* <Hooks /> */}
 {/* <DashBoard /> */}
 
-<DataContext.Provider value="Bhallas">
+
+{/* Provider */}
+{/* <DataContext.Provider value="Bhallas">
 <MainComponent />
-</DataContext.Provider>
+</DataContext.Provider> */}
+
+{/* <ThemeProvider /> */}
+<Hooks1 />
 
 
     </>
