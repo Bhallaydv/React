@@ -16,6 +16,16 @@ import Dashboard from "./Class 6/Dashboard";
 import NotFound from "./Class 7/NotFound";
 import Navbar from "./Class 7/Navbar";
 import Student from "./Class 7/Student";
+import Hooks from "./Class 8/Hooks";
+import DashBoard from "./Class 8/DashBoard";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import MainComponent from "./Class 8/MainComponent";
+import { createContext } from "react";
+
+
+ export const DataContext=createContext()
+
+
 
 
 function App() {
@@ -112,9 +122,17 @@ let router=createBrowserRouter(
 
 {/* <Form1 /> */}
 
-<RouterProvider router={router}/>
+{/* <RouterProvider router={router}/> */}
 
 {/* <Navbar /> */}
+
+{/* <Hooks /> */}
+{/* <DashBoard /> */}
+
+<DataContext.Provider value="Bhallas">
+<MainComponent />
+</DataContext.Provider>
+
 
     </>
   )
