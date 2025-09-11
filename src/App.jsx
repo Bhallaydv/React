@@ -24,6 +24,7 @@ import { createContext } from "react";
 import ThemeProvider from "./Class 8/context/ThemeProvider";
 import Hooks1 from "./Class 9/Hooks1";
 import Doubts from "./Class 10/Doubts";
+import Intro from "./FramerMotion/Intro";
 
 //creation of context
  export const DataContext=createContext()
@@ -140,7 +141,8 @@ let router=createBrowserRouter(
 
 {/* <ThemeProvider /> */}
 {/* <Hooks1 /> */}
-<Doubts />
+{/* <Doubts /> */}
+<Intro />
 
 
     </>
