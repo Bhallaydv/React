@@ -20,14 +20,19 @@ import Hooks from "./Class 8/Hooks";
 import DashBoard from "./Class 8/DashBoard";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainComponent from "./Class 8/MainComponent";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import ThemeProvider from "./Class 8/context/ThemeProvider";
 import Hooks1 from "./Class 9/Hooks1";
 import Doubts from "./Class 10/Doubts";
 import Intro from "./FramerMotion/Intro";
+import Home from "./Project 1/Home";
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment, Reset, incrementByAmount } from "./redux/feature/CounterSlice";
 
 //creation of context
  export const DataContext=createContext()
+
+// let [amount, setAmount]=useState(0);
 
 
 
@@ -36,6 +41,8 @@ function App() {
 const style={
   backgroundColor:"red"
 }
+let [amount, setAmount]=useState(0);
+
 
 let router=createBrowserRouter(
   [
@@ -95,6 +102,32 @@ let router=createBrowserRouter(
     b:"Fantastic",
     c:"Excellent"
   }
+
+function incCount(){
+dispatch(increment());
+}
+
+function decCount(){
+dispatch(decrement());
+}
+
+function resetCount(){
+dispatch(Reset());
+}
+
+function update(){
+  dispatch(incrementByAmount(amount))  //Number(): to convert string to number
+}
+
+
+const count= useSelector((state)=>state.counter.value)
+const dispatch= useDispatch();
+
+
+
+
+
+
   return ( 
     <>
       {/* <Hello />
@@ -142,7 +175,24 @@ let router=createBrowserRouter(
 {/* <ThemeProvider /> */}
 {/* <Hooks1 /> */}
 {/* <Doubts /> */}
-<Intro />
+{/* <Intro /> */}
+{/* <Home /> */}
+
+<button onClick={incCount}>+</button>
+<br /><br />
+<h1>Count:{count}</h1>
+<br /><br />
+<button onClick={decCount}>-</button>
+
+<button onClick={resetCount}>Reset</button>
+<br /><br />
+<input type="number"
+value={amount}
+placeholder="Enter Amount"
+onChange={(e)=>{ setAmount(e.target.value)}}
+/>
+
+<button onClick={update}>Update</button>
 
 
     </>

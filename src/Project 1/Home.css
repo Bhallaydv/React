@@ -1,0 +1,13 @@
+.hero{
+    width:100;
+    height: 900px;
+    background: url('../assets/bg-slate.png');
+    background-size: cover;
+}
+
+.coffee-mug{
+    position: absolute;
+    top:110px;
+    left: 450px;
+}
+
